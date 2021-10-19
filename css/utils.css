@@ -1,0 +1,17 @@
+:root {
+  --sidebar-width: 270px;
+}
+
+#log-sidebar {
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+}
+
+#log-text {
+  margin-left: 1em;
+}
