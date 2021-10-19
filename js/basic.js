@@ -7,6 +7,7 @@ function init() {
   console.log(gl);
   text_log.innerText = gl;
   utils.attachLog();
+  utils.log("hihi");
 }
 
 window.onload = init;

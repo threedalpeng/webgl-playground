@@ -16,7 +16,7 @@ const utils = {
   },
   log: (message) => {
     let text_log = $id("log-text");
-    text_log.innerText += message;
+    text_log.innerHTML += "<br/>" + message;
   },
 };
 
