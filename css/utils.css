@@ -1,5 +1,7 @@
 :root {
   --sidebar-width: 270px;
+  --canvas-full-width: calc(100vw - var(--sidebar-width) - 40px);
+  --canvas-full-height: calc(var(--canvas-full-width) * 2 / 3);
 }
 
 #log-sidebar {
@@ -14,4 +16,10 @@
 
 #log-text {
   margin-left: 1em;
+}
+
+#webgl-canvas {
+  border: 2px solid lightslategray;
+  width: var(--canvas-full-width);
+  height: var(--canvas-full-height);
 }
