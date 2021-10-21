@@ -1,5 +1,5 @@
 :root {
-  --sidebar-width: 270px;
+  --sidebar-width: 15vw;
   --canvas-full-width: calc(100vw - var(--sidebar-width) - 40px);
   --canvas-full-height: calc(var(--canvas-full-width) * 2 / 3);
 }

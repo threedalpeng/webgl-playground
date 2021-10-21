@@ -4,23 +4,33 @@ export const $id = (id) => document.getElementById(id);
 export const $cls = (cls) => document.getElementsByClassName(cls);
 
 const utils = {
+  gl: "",
+  logBar: "",
   attachLog: () => {
     let body = $q("body");
 
-    let logbar = document.createElement("div");
-    logbar.setAttribute("id", "log-sidebar");
+    let logSideBar = document.createElement("div");
+    logSideBar.setAttribute("id", "log-sidebar");
 
-    let text_log = document.createElement("p");
-    text_log.setAttribute("id", "log-text");
+    utils.logBar = document.createElement("p");
+    utils.logBar.setAttribute("id", "log-text");
 
-    logbar.appendChild(text_log);
-    body.appendChild(logbar);
+    logSideBar.appendChild(logBar);
+    body.appendChild(logSideBar);
 
-    text_log.innerText = "Here is a log";
+    utils.logBar.innerText = "Here is a log";
   },
   log: (message) => {
-    let text_log = $id("log-text");
-    text_log.innerHTML += "<br/>" + message;
+    utils.logBar.innerHTML += "<br/>" + message;
+  },
+  loadShader: async (vert, frag) => {
+    utils.log("loading shader...");
+    let vertexShaderSource = await (await fetch(vert)).text();
+    let fragmentShaderSource = await (await fetch(frag)).text();
+    let vertexShader = gl.createShader(gl.VERTEX_SHADER);
+    let fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+    vertexShaderSource.trim();
+    utils.log(vertText);
   },
 };
 
