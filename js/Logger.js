@@ -1,7 +1,7 @@
 import { $q, $id } from "./utils.js";
 
 export default class Logger {
-  static constructor() {
+  static _staticConstructor = (function () {
     let body = $q("body");
     let logSideBar = document.createElement("div");
     logSideBar.setAttribute("id", "log-sidebar");
@@ -12,7 +12,8 @@ export default class Logger {
     body.appendChild(logSideBar);
 
     Logger._logNode.innerText = "Here is a log";
-  }
+  })();
+
   static _logNode = document.createElement("p");
   static log(message) {
     Logger._logNode.innerHTML += "<br/>" + message;

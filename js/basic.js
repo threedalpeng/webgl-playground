@@ -2,8 +2,7 @@ import utils, { $id } from "./utils.js";
 import Logger from "./Logger.js";
 
 function init() {
-  utils.attachLog();
-
+  const logger = new Logger();
   Logger.log("hi");
 
   let cvs = $id("webgl-canvas");
