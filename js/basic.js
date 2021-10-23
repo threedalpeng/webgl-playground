@@ -15,7 +15,7 @@ function init() {
 
   //let program = gl.createProgram();
 
-  gl.linkProgram(program);
+  // gl.linkProgram(program);
 }
 
 window.onload = init;

@@ -16,7 +16,17 @@ export default class Logger {
     Logger.#logNode.innerText = "Here is a log";
   })();
 
-  static log(message) {
-    Logger.#logNode.innerHTML += "<br/>" + message;
+  static log(...messages) {
+    let logMessage = "";
+    messages.forEach((message) => {
+      logMessage += message;
+      if (typeof message === "object") {
+        for (let attr in message) {
+          logMessage += " " + attr;
+        }
+      }
+      logMessage += " ";
+    });
+    Logger.#logNode.innerHTML += logMessage + "<br/>";
   }
 }
