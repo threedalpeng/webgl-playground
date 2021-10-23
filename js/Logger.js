@@ -1,21 +1,22 @@
-import { $q, $id } from "./utils.js";
+import { $q, $id, $el } from "./utils.js";
 
 export default class Logger {
-  static _staticConstructor = (function () {
+  static #logNode;
+  static #staticConstructor = (function () {
     let body = $q("body");
-    let logSideBar = document.createElement("div");
+    let logSideBar = $el("div");
     logSideBar.setAttribute("id", "log-sidebar");
 
-    Logger._logNode.setAttribute("id", "log-text");
+    Logger.#logNode = $el("p");
+    Logger.#logNode.setAttribute("id", "log-text");
 
-    logSideBar.appendChild(Logger._logNode);
+    logSideBar.appendChild(Logger.#logNode);
     body.appendChild(logSideBar);
 
-    Logger._logNode.innerText = "Here is a log";
+    Logger.#logNode.innerText = "Here is a log";
   })();
 
-  static _logNode = document.createElement("p");
   static log(message) {
-    Logger._logNode.innerHTML += "<br/>" + message;
+    Logger.#logNode.innerHTML += "<br/>" + message;
   }
 }

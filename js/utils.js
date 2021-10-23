@@ -2,6 +2,7 @@ export const $q = (q) => document.querySelector(q);
 export const $qa = (q) => document.querySelectorAll(q);
 export const $id = (id) => document.getElementById(id);
 export const $cls = (cls) => document.getElementsByClassName(cls);
+export const $el = (el) => document.createElement(el);
 
 const utils = {
   gl: "",
